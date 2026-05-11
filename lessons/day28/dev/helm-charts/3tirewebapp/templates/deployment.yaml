@@ -1,16 +1,16 @@
-﻿apiVersion: apps/v1
+﻿62apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 3tirewebapp
+  name: threetirewebapp
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: 3tirewebapp
+      app: threetirewebapp
   template:
     metadata:
       labels:
-        app: 3tirewebapp
+        app: app: threetirewebapp
     spec:
       containers:
         - name: web
