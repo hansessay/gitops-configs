@@ -1,11 +1,5 @@
 ﻿frontend:
   name: frontend
   image: nginx
-  replicas: 1
-  port: 80
-
-backend:
-  name: backend
-  image: nginx
-  replicas: 1
+  replicas: 2   # change from 1 → 2
   port: 80
