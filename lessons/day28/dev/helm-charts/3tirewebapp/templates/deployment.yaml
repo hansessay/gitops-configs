@@ -1,20 +1,24 @@
-﻿62apiVersion: apps/v1
+﻿apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: threetirewebapp
+
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
+
   selector:
     matchLabels:
       app: threetirewebapp
+
   template:
     metadata:
       labels:
-        app: app: threetirewebapp
+        app: threetirewebapp
+
     spec:
       containers:
-        - name: web
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: threetirewebapp
+          image: nginx
           ports:
             - containerPort: 80
