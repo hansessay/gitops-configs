@@ -1,24 +1,25 @@
-﻿apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: threetirewebapp
+  name: backend
 
 spec:
   replicas: 1
 
   selector:
     matchLabels:
-      app: threetirewebapp
+      app: backend
 
   template:
     metadata:
       labels:
-        app: threetirewebapp
+        app: backend
 
     spec:
       containers:
-        - name: threetirewebapp
+        - name: backend
           image: nginx
+
           ports:
             - containerPort: 80
