@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Kubernetes secrets
+*.secret.yaml
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
