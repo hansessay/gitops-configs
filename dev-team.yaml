@@ -4,7 +4,6 @@ kind: Role
 metadata:
   name: dev-team-role
   namespace: default
-
   labels:
     security-model: enterprise-rbac
     managed-by: gitops
@@ -61,4 +60,4 @@ rules:
     verbs:
       - get
       - list
-      - watch0
+      - watch
