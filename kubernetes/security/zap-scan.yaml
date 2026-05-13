@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: zap-scan
+  namespace: 3tirewebapp-dev
+spec:
+  template:
+    spec:
+      containers:
+      - name: zap
+        image: zaproxy/zap-stable
+        command: ["zap-baseline.py"]
+        args:
+        - "-t"
+        - "http://frontend"
+        - "-r"
+        - "zap-report.html"
+      restartPolicy: Never
+  backoffLimit: 1
