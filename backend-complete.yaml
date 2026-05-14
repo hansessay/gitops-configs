@@ -7,7 +7,7 @@ data:
   DB_HOST: postgres
   DB_PORT: "5432"
   SSL: disable
-  PORT: "8080"
+  PORT: "80"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -30,7 +30,7 @@ spec:
         - name: backend
           image: cheikhfall/aks-devsecops-app:38a8b79e881506426afb1b718ea995e53b0c3ae6
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           env:
             - name: DB_HOST
               valueFrom:
@@ -76,13 +76,13 @@ spec:
               cpu: "200m"
           livenessProbe:
             httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 30
+              path: /
+              port: 80
+            initialDelaySeconds: 10
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /health
+              path: /
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 5
@@ -96,8 +96,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 80
+      targetPort: 80
       protocol: TCP
   selector:
     app: backend
