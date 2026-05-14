@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aiops-assistant
+  namespace: aiops
+spec:
+  type: ClusterIP
+  selector:
+    app: aiops-assistant
+  ports:
+    - port: 80
+      targetPort: 8080

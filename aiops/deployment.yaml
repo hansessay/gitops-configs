@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aiops-assistant
+  namespace: aiops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aiops-assistant
+  template:
+    metadata:
+      labels:
+        app: aiops-assistant
+    spec:
+      serviceAccountName: aiops-sa
+      containers:
+        - name: aiops-assistant
+          image: cheikhfall/aiops-assistant:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+          envFrom:
+            - configMapRef:
+                name: aiops-config
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"

@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: aiops-readonly
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "events", "nodes", "services", "namespaces"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets", "statefulsets"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: aiops-readonly-binding
+subjects:
+  - kind: ServiceAccount
+    name: aiops-sa
+    namespace: aiops
+roleRef:
+  kind: ClusterRole
+  name: aiops-readonly
+  apiGroup: rbac.authorization.k8s.io
