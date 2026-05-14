@@ -34,4 +34,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/aks-devsecops-app:${{ env.IMAGE_TAG }}
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/aks-devsecops-app:${{ env.IMAGE_TAG }}1
