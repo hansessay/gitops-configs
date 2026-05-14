@@ -1,7 +1,0 @@
-{
-  "metadata": {
-    "annotations": {
-      "argocd.argoproj.io/refresh": "hard"
-    }
-  }
-}
