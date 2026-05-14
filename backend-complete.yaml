@@ -28,7 +28,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: backend
-          image: cheikhfall/aks-devsecops-app:3a46aeeba38c539a13cb52c29cfb1358f2eb6a64
+          image: cheikhfall/aks-devsecops-app:c36d378992f44d75c19bc7e138574077fa0898d1
           ports:
             - containerPort: 80
           env:
