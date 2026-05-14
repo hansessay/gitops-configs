@@ -32,6 +32,10 @@ jobs:
           exit-code: 1
           ignore-unfixed: true
 
+      - name: Debug secrets
+        run: |
+          echo "USERNAME=${{ secrets.DOCKER_USERNAME }}"
+
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
