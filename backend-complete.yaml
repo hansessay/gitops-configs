@@ -28,7 +28,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: backend
-          image: piyushasachdeva/backend # Tag managed by kustomization.yaml
+          image: cheikhfall/aks-devsecops-app:38a8b79e881506426afb1b718ea995e53b0c3ae6
           ports:
             - containerPort: 8080
           env:
