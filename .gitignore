@@ -15,3 +15,8 @@ Thumbs.db
 
 # Node
 node_modules/
+# Secrets and local files
+credentials-velero*
+bsl-patch.json
+zap-report*.html
+zap-report*.json
