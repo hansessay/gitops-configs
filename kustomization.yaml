@@ -15,7 +15,7 @@ images:
     newTag: v1.0.1
 
   - name: cheikhfall/aks-devsecops-app
-    newTag: latest
+    newTag: 4dfd97b62689b47555739ef796ca845115fd8b50
 
   - name: postgres
     newTag: "15"
