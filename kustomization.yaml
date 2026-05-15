@@ -8,6 +8,7 @@ resources:
   - scaling-resilience.yaml
   - kyverno-policies.yaml
   - ingress.yaml
+  - external-secret.yaml
 
 images:
   - name: cheikhfall/frontend
