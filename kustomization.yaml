@@ -1,31 +1,17 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-# Target namespace
-namespace: 3tirewebapp-dev
-
-# Resources
 resources:
   - namespace.yaml
   - postgres-complete.yaml
   - backend-complete.yaml
   - frontend-complete.yaml
   - external-secrets-placeholder.yaml
+  - network-policies.yaml
 
-# Common annotations
-commonAnnotations:
-  app.kubernetes.io/version: "1.0"
-
-# Image overrides
 images:
   - name: piyushasachdeva/frontend
     newName: cheikhfall/frontend
     newTag: v1.0.0
-
   - name: piyushasachdeva/backend
-    newName: cheikhfall/backend
+    newName: cheikhfall/aks-devsecops-app
     newTag: latest
-
   - name: postgres
     newTag: "15"
-  - network-policies.yaml
