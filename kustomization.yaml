@@ -6,6 +6,7 @@ resources:
   - external-secrets-placeholder.yaml
   - network-policies.yaml
   - scaling-resilience.yaml
+  - kyverno-policies.yaml
 
 images:
   - name: piyushasachdeva/frontend
