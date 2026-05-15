@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image:  piyushasachdeva/frontend # Tag managed by kustomization.yaml
+          image: cheikhfall/frontend:v1.0.10 # Tag managed by kustomization.yaml
           ports:
             - containerPort: 80
           env:
