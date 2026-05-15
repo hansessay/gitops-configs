@@ -28,3 +28,4 @@ images:
 
   - name: postgres
     newTag: "15"
+  - network-policies.yaml
