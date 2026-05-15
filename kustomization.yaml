@@ -5,6 +5,7 @@ resources:
   - frontend-complete.yaml
   - external-secrets-placeholder.yaml
   - network-policies.yaml
+  - scaling-resilience.yaml
 
 images:
   - name: piyushasachdeva/frontend
