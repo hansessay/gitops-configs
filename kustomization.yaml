@@ -10,11 +10,11 @@ resources:
   - ingress.yaml
 
 images:
-  - name: piyushasachdeva/frontend
-    newName: cheikhfall/frontend
-    newTag: v1.0.0
-  - name: piyushasachdeva/backend
-    newName: cheikhfall/aks-devsecops-app
+  - name: cheikhfall/frontend
+    newTag: v1.0.1
+
+  - name: cheikhfall/aks-devsecops-app
     newTag: latest
+
   - name: postgres
     newTag: "15"
