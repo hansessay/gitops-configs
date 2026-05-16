@@ -3,10 +3,19 @@ kind: Ingress
 metadata:
   name: frontend-ingress
   namespace: 3tirewebapp-dev
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - cheikhibra.duckdns.org
+      secretName: cheikhibra-tls
+
   rules:
-    - http:
+    - host: cheikhibra.duckdns.org
+      http:
         paths:
           - path: /
             pathType: Prefix
