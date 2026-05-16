@@ -9,6 +9,7 @@ resources:
   - kyverno-policies.yaml
   - ingress.yaml
   - external-secret.yaml
+  - cluster-issuer.yaml
 
 images:
   - name: cheikhfall/frontend
